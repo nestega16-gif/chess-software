@@ -1,12 +1,5 @@
 package software.ulpgc.chess;
 
-public class Rank {
-    private final int value;
-
-    private Rank(int value){
-        this.value = value;
-    }
-
-    public static final Rank R1 = new Rank(1);
-
+public enum Rank {
+    R1,R2,R3,R4,R5,R6,R7,R8
 }
