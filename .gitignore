@@ -1,41 +1,41 @@
-# ==========================================
-# 1. Archivos y directorios de compilación
-# ==========================================
 target/
-out/
-build/
-bin/
-*.class
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
+.kotlin
+.class
+.jar
 
-# ==========================================
-# 2. Empaquetados y binarios
-# ==========================================
-*.jar
-*.war
-*.zip
-*.exe
-
-# ==========================================
-# 3. Archivos de registro (Logs)
-# ==========================================
-*.log
-
-# ==========================================
-# 4. Entorno de Desarrollo (IntelliJ IDEA)
-# ==========================================
-.idea/
-*.iml
+### IntelliJ IDEA ###
+.idea/modules.xml
+.idea/jarRepositories.xml
+.idea/compiler.xml
+.idea/libraries/
 *.iws
+*.iml
+*.ipr
 
-# ==========================================
-# 5. Credenciales y configuración local
-# ==========================================
-.env
-*.local
-secrets.properties
+### Eclipse ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
 
-# ==========================================
-# 6. Archivos del Sistema Operativo
-# ==========================================
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+build/
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+### VS Code ###
+.vscode/
+
+### Mac OS ###
 .DS_Store
-Thumbs.db
