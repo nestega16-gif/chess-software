@@ -1,13 +1,12 @@
 package software.ulpgc.chess;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
 import static software.ulpgc.chess.Piece.*;
 import static software.ulpgc.chess.Square.at;
 
-public final class Board() {
+public final class Board {
 
     private final Map<Square, Piece> pieces;
 
@@ -60,7 +59,6 @@ public final class Board() {
         );
     }
 
-
     Piece pieceAt(File file, Rank rank) {
         return pieceAt(new Square(file, rank));
     }
@@ -69,11 +67,18 @@ public final class Board() {
         return pieceAt(at(square));
     }
 
-    private Piece pieceAt(Square square) {
+    Piece pieceAt(Square square) {
         return pieces.get(square);
     }
 
     public Board move(Square from, Square to) {
-        /// TODO -> crea nuevo board modificado
+        Map<Square, Piece> updatedPieces = new HashMap<>(pieces);
+        Piece piece = updatedPieces.remove(from);
+        updatedPieces.put(to, piece);
+        return new Board(updatedPieces);
+    }
+
+    public Board move(String from, String to) {
+        return move(at(from), at(to));
     }
 }
