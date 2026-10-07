@@ -1,4 +1,4 @@
-package software.ulpgc.chess;
+package software.ulpgc.chess.model;
 
 public record Square(File file, Rank rank) {
 

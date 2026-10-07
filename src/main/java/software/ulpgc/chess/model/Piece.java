@@ -1,11 +1,10 @@
-package software.ulpgc.chess;
+package software.ulpgc.chess.model;
 
-import java.awt.*;
 import java.util.Collections;
 import java.util.EnumSet;
 import java.util.Set;
 
-import static software.ulpgc.chess.Color.*;
+import static software.ulpgc.chess.model.Color.*;
 
 public enum Piece {
     WhitePawn,

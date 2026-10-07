@@ -1,21 +1,15 @@
-package software.ulpgc.chess;
+package software.ulpgc.chess.model;
 
 import java.util.HashMap;
 import java.util.Map;
 
-import static software.ulpgc.chess.Piece.*;
-import static software.ulpgc.chess.Square.at;
+import static software.ulpgc.chess.model.Piece.*;
+import static software.ulpgc.chess.model.Square.at;
 
-public final class Board {
+public record Board(Map<Square, Piece> pieces) {
 
-    private final Map<Square, Piece> pieces;
-
-    public Board(Map<Square, Piece> givenPieces) {
-        pieces = Map.copyOf(givenPieces);
-    }
-
-    public Map<Square, Piece> getPieces() {
-        return pieces;
+    public Board(Map<Square, Piece> pieces) {
+        this.pieces = Map.copyOf(pieces);
     }
 
     public static Board initialBoard() {
