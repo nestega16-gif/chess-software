@@ -12,7 +12,7 @@ public enum File {
         return symbol;
     }
 
-    public static File fromSymbol(char targetSymbol) {
+    static File fromSymbol(char targetSymbol) {
         for (File file : File.values()) {
             if (file.getSymbol() == targetSymbol) {
                 return file;
