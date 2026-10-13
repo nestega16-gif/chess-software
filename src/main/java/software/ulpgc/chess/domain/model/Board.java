@@ -1,10 +1,10 @@
-package software.ulpgc.chess.model;
+package software.ulpgc.chess.domain.model;
 
 import java.util.HashMap;
 import java.util.Map;
 
-import static software.ulpgc.chess.model.Piece.*;
-import static software.ulpgc.chess.model.Square.at;
+import static software.ulpgc.chess.domain.model.Piece.*;
+import static software.ulpgc.chess.domain.model.Square.at;
 
 public record Board(Map<Square, Piece> pieces) {
 
