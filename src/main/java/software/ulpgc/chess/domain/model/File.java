@@ -14,7 +14,7 @@ public enum File {
         return symbol;
     }
 
-    static File fromSymbol(char targetSymbol) {
+    public static File fromSymbol(char targetSymbol) {
         return Arrays.stream(File.values()).filter(file -> file.getSymbol() == targetSymbol).findFirst().orElse(null);
     }
 }

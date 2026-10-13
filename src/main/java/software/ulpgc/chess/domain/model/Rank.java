@@ -15,7 +15,7 @@ public enum Rank {
         return value;
     }
 
-    static Rank fromValue(int targetValue) {
+    public static Rank fromValue(int targetValue) {
         return Arrays.stream(Rank.values()).filter(rank -> rank.getValue() == targetValue).findFirst().orElse(null);
     }
 }
