@@ -13,11 +13,8 @@ public enum File {
     }
 
     static File fromSymbol(char targetSymbol) {
-        for (File file : File.values()) {
-            if (file.getSymbol() == targetSymbol) {
-                return file;
-            }
-        }
+        for (File file : File.values())
+            if (file.getSymbol() == targetSymbol) return file;
         return null;
     }
 }

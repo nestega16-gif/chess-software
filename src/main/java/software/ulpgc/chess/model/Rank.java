@@ -14,11 +14,8 @@ public enum Rank {
     }
 
     static Rank fromValue(int targetValue) {
-        for (Rank rank : Rank.values()) {
-            if (rank.getValue() == targetValue) {
-                return rank;
-            }
-        }
+        for (Rank rank : Rank.values())
+            if (rank.getValue() == targetValue) return rank;
         return null;
     }
 }
