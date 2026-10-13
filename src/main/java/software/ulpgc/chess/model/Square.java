@@ -3,9 +3,7 @@ package software.ulpgc.chess.model;
 public record Square(File file, Rank rank) {
 
     public static Square at(String square) {
-        File file = toFile(square.charAt(0));
-        Rank rank = toRank(square.charAt(1));
-        return new Square(file, rank);
+        return new Square(toFile(square.charAt(0)), toRank(square.charAt(1)));
     }
 
     private static File toFile(char symbol) {
