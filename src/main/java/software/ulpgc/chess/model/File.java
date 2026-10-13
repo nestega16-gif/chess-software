@@ -1,5 +1,7 @@
 package software.ulpgc.chess.model;
 
+import java.util.Arrays;
+
 public enum File {
     A('a'), B('b'), C('c'), D('d'), E('e'), F('f'), G('g'), H('h');
 
@@ -13,8 +15,6 @@ public enum File {
     }
 
     static File fromSymbol(char targetSymbol) {
-        for (File file : File.values())
-            if (file.getSymbol() == targetSymbol) return file;
-        return null;
+        return Arrays.stream(File.values()).filter(file -> file.getSymbol() == targetSymbol).findFirst().orElse(null);
     }
 }
