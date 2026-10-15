@@ -20,7 +20,7 @@ public class FenBoardDeserializer implements BoardDeserializer {
         Map<Square, Piece> piecesAtBoard = new HashMap<>();
         int rankValue = 8;
         for (String rowPieces : boardPieces)
-            placeRank(piecesAtBoard, rowPieces, rankValue--);
+            placeRank(piecesAtBoard, rowPieces, --rankValue);
         return new Board(piecesAtBoard);
     }
 
@@ -28,7 +28,7 @@ public class FenBoardDeserializer implements BoardDeserializer {
         int fileValue = 0;
         for(char character: rowPieces.toCharArray()) {
             if(Character.isDigit(character)) fileValue += Character.getNumericValue(character);
-            else placePiece(piecesAtBoard, character, rankValue, fileValue);
+            else placePiece(piecesAtBoard, character, rankValue, fileValue++);
         }
     }
 
