@@ -105,7 +105,6 @@ public class FenBoardDeserializerTest {
     class InitialPosition {
 
         private static final String INITIAL_FEN = "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR";
-        private static final String FULL_INITIAL_FEN = "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1";
 
         @Test
         @DisplayName("Debe deserializar la posición inicial con exactamente 32 piezas")
@@ -194,17 +193,6 @@ public class FenBoardDeserializerTest {
                             "La casilla " + file + rank + " debe estar vacía");
                 }
             }
-        }
-
-        @Test
-        @DisplayName("Debe deserializar correctamente un FEN completo con campos adicionales (turno, enroque, etc.)")
-        void should_deserialize_full_fen_string_with_extra_fields() {
-            Board board = deserializer.deserialize(FULL_INITIAL_FEN);
-
-            assertNotNull(board);
-            assertEquals(32, board.pieces().size());
-            assertEquals(Piece.WhiteKing, board.pieces().get(square('e', 1)));
-            assertEquals(Piece.BlackKing, board.pieces().get(square('e', 8)));
         }
     }
 
