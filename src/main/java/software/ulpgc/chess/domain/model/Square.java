@@ -7,7 +7,7 @@ public record Square(File file, Rank rank) {
     }
 
     public static Square of(int i, int j) {
-        return new Square(File.values()[i], Rank.values()[j]);
+        return new Square(File.values()[j], Rank.values()[i]);
     }
 
     private static File toFile(char symbol) {

@@ -22,20 +22,21 @@ public enum Piece {
 
 
     public static Piece of(char piece) {
-        switch (piece) {
-            case 'P': return WhitePawn;
-            case 'R': return WhiteRook;
-            case 'Q': return WhiteQueen;
-            case 'K': return WhiteKing;
-            case 'B': return WhiteBishop;
-            case 'N': return WhiteKnight;
-            case 'p': return BlackPawn;
-            case 'r': return BlackRook;
-            case 'q': return BlackQueen;
-            case 'k': return BlackKing;
-            case 'b': return BlackBishop;
-            case 'n': return BlackKnight;
-        }
+        return switch (piece) {
+            case 'P' -> WhitePawn;
+            case 'R' -> WhiteRook;
+            case 'Q' -> WhiteQueen;
+            case 'K' -> WhiteKing;
+            case 'B' -> WhiteBishop;
+            case 'N' -> WhiteKnight;
+            case 'p' -> BlackPawn;
+            case 'r' -> BlackRook;
+            case 'q' -> BlackQueen;
+            case 'k' -> BlackKing;
+            case 'b' -> BlackBishop;
+            case 'n' -> BlackKnight;
+            default -> null;
+        };
     }
 
     Color color() {
