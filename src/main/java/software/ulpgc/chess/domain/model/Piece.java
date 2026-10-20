@@ -7,36 +7,27 @@ import java.util.Set;
 import static software.ulpgc.chess.domain.model.Color.*;
 
 public enum Piece {
-    WhitePawn,
-    WhiteRook,
-    WhiteQueen,
-    WhiteKnight,
-    WhiteBishop,
-    WhiteKing,
-    BlackPawn,
-    BlackRook,
-    BlackQueen,
-    BlackKnight,
-    BlackBishop,
-    BlackKing;
+    WhitePawn('P'),
+    WhiteRook('R'),
+    WhiteQueen('Q'),
+    WhiteKnight('N'),
+    WhiteBishop('B'),
+    WhiteKing('K'),
+    BlackPawn('p'),
+    BlackRook('r'),
+    BlackQueen('q'),
+    BlackKnight('n'),
+    BlackBishop('b'),
+    BlackKing('k');
 
+    private final char symbol;
 
-    public static Piece of(char piece) {
-        return switch (piece) {
-            case 'P' -> WhitePawn;
-            case 'R' -> WhiteRook;
-            case 'Q' -> WhiteQueen;
-            case 'K' -> WhiteKing;
-            case 'B' -> WhiteBishop;
-            case 'N' -> WhiteKnight;
-            case 'p' -> BlackPawn;
-            case 'r' -> BlackRook;
-            case 'q' -> BlackQueen;
-            case 'k' -> BlackKing;
-            case 'b' -> BlackBishop;
-            case 'n' -> BlackKnight;
-            default -> null;
-        };
+    Piece(char symbol) { this.symbol = symbol; }
+
+    public char getSymbol() { return symbol; }
+
+    public static Piece fromSymbol(char symbol) {
+        return EnumSet.allOf(Piece.class).stream().filter(p -> p.symbol == symbol).findFirst().orElse(null);
     }
 
     Color color() {
@@ -71,4 +62,5 @@ public enum Piece {
     private boolean isWhite() {
         return WHITE_PIECES.contains(this);
     }
+
 }
